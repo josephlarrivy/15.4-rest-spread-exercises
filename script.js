@@ -10,8 +10,9 @@ function filterOutOdds() {
 }
 //Refactor it to use the rest operator & an arrow function:
 
+const filterOutOdds2 = ((...nums) => nums.filter(num => num%2 === 0));
 
-
+console.log(filterOutOdds2(1,2,3,4,5,6,7));
 
 
 
@@ -24,6 +25,7 @@ function filterOutOdds() {
 
 // Make sure to do this using the rest and spread operator.
 
+/*
 findMin(1,4,12,-3) // -3
 findMin(1,-1) // -1
 findMin(3,1) // 1
