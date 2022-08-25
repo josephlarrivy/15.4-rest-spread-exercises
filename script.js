@@ -47,6 +47,9 @@ function doubleAndReturnArgs (arr, ...others) {
   return [...arr, ...others.map(n => n*2)];
 }
 
+//rewritten:
+const doubleAndReturnArgs2 = (arr, ...others) => [...arr, ...others.map(n => n*2)];
+
 // Slice and Dice!
 // For this section, write the following functions using rest, spread and refactor these functions to be arrow functions!
 
@@ -60,7 +63,10 @@ function removeRandom(items) {
   return [...items.slice(0,rand), ...items.slice(rand +1)];
 }
 
-
+const removeRandom2 = (items) => {
+  let rand = math.floor(Math.random()*items.length);
+  return [...items.slice(0,rand), ...items.slice(rand +1)];
+}
 
 
 
@@ -71,7 +77,7 @@ function extend(array1, array2) {
   return [...array1, ...array2];
 }
 
-
+const extend2 = (array1, array2) => [...array1, ...array2];
 
 
 
@@ -85,7 +91,11 @@ function addKeyVal(obj, key, val) {
   return newObj;
 }
 
-
+const addKeyVal2 = (obj, key, val) => {
+  let newObj = {...obj};
+  newObj[key] = val;
+  return newObj;
+}
 
 
 
@@ -93,11 +103,18 @@ function addKeyVal(obj, key, val) {
 
 /* Return a new object with a key removed. */
 
+
 function removeKey(obj, key) {
-  
+  let newObject = {...obj};
+  delete newObj[key];
+  return newObject;
 }
 
-
+const removeKey2 = (obj, key) => {
+  let newObject = {...obj};
+  delete newObj[key];
+  return newObject;
+}
 
 
 
@@ -106,10 +123,12 @@ function removeKey(obj, key) {
 /* Combine two objects and return a new object. */
 
 function combine(obj1, obj2) {
-
+  return {...obj1, ...obj2};
 }
 
-
+const combine2 = (obj1, obj2) => {
+  return {...obj1, ...obj2};
+}
 
 
 
@@ -118,10 +137,12 @@ function combine(obj1, obj2) {
 /* Return a new object with a modified key and value. */
 
 function update(obj, key, val) {
-
+  return {...obj, [key]: val};
 }
 
-
+const update2 = (obj, key, val) => {
+  return {...obj, [key]: val};
+}
 
 
 
